@@ -2,21 +2,26 @@
 % Please edit documentation in R/AllGenerics.R, R/methods-fooRanges.R
 \name{barbar}
 \alias{barbar}
+\alias{barbar<-}
 \alias{barbar,fooRanges-method}
-\title{Accessor for barbar of fooRanges}
+\alias{barbar<-,fooRanges,character-method}
+\title{Accessor and replacement methods for barbar of fooRanges}
 \usage{
 barbar(x, ...)
 
+barbar(x, ...) <- value
+
 \S4method{barbar}{fooRanges}(x)
+
+\S4method{barbar}{fooRanges,character}(x) <- value
 }
 \arguments{
 \item{x}{fooRanges object}
 
 \item{...}{additional arguments}
-}
-\value{
-the barbar
+
+\item{value}{replacement for barbar}
 }
 \description{
-A function that gets the barbar from fooRanges
+Functions that get or set the barbar slot from fooRanges
 }

@@ -18,25 +18,32 @@ foobar.fooRanges <- function(x) {
 #' x <- GRanges("1", IRanges(1,10))
 #' y <- fooRanges(x, barbar="hi")
 #' barbar(y)
+#' barbar(y) <- "hey"
 #' foobar(y)
 #' 
 #' @rdname foobar
 #' @export
 setMethod("foobar", signature(x="fooRanges"), foobar.fooRanges)
 
-barbar.fooRanges <- function(x) {
-  x@barbar
-}
-
-#' Accessor for barbar of fooRanges
+#' Accessor and replacement methods for barbar of fooRanges
 #'
-#' A function that gets the barbar from fooRanges
+#' Functions that get or set the barbar slot from fooRanges
 #'
 #' @param x fooRanges object
+#' @param value replacement for barbar
 #' @param ... additional arguments
-#'
-#' @return the barbar
 #'
 #' @rdname barbar
 #' @export
-setMethod("barbar", signature(x="fooRanges"), barbar.fooRanges)
+setMethod("barbar", signature(x="fooRanges"),
+          function(x) {
+            x@barbar
+          })
+
+#' @rdname barbar
+#' @export
+setReplaceMethod("barbar", signature(x="fooRanges", value="character"),
+                 function(x, value) {
+                   x@barbar <- value
+                   x
+                 })

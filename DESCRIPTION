@@ -1,6 +1,6 @@
 Package: s4demo
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.1
+Title: Simple Demo of S4 Methods and Classes for Bioconductor
+Version: 0.0.2
 Authors@R: 
     person(given = "First",
            family = "Last",

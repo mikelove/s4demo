@@ -26,6 +26,7 @@ library(GenomicRanges)
 x <- GRanges("1", IRanges(1,10))
 y <- fooRanges(x, barbar="hi")
 barbar(y)
+barbar(y) <- "hey"
 foobar(y)
 
 }
