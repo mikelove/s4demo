@@ -1,13 +1,13 @@
-foobar.fooRanges <- function(x) {
-  message(paste("sum of starts:",sum(start(x))))
-  message(paste("barbar:",barbar(x)))
+foobar.FooRanges <- function(x) {
+    message("sum of starts: ", sum(start(x)))
+    message("barbar: ", barbar(x))
 }
 
-#' Foobar fooRanges
+#' Foobar FooRanges
 #'
-#' A function that does foobar to fooRanges
+#' A function that does foobar to FooRanges
 #'
-#' @param x fooRanges object
+#' @param x FooRanges object
 #' @param ... additional arguments
 #'
 #' @return a summary
@@ -16,34 +16,32 @@ foobar.fooRanges <- function(x) {
 #'
 #' library(GenomicRanges)
 #' x <- GRanges("1", IRanges(1,10))
-#' y <- fooRanges(x, barbar="hi")
+#' y <- FooRanges(x, barbar="hi")
 #' barbar(y)
 #' barbar(y) <- "hey"
 #' foobar(y)
 #' 
 #' @rdname foobar
 #' @export
-setMethod("foobar", signature(x="fooRanges"), foobar.fooRanges)
+setMethod("foobar", signature(x="FooRanges"), foobar.FooRanges)
 
-#' Accessor and replacement methods for barbar of fooRanges
+#' Accessor and replacement methods for barbar of FooRanges
 #'
-#' Functions that get or set the barbar slot from fooRanges
+#' Functions that get or set the barbar slot from FooRanges
 #'
-#' @param x fooRanges object
+#' @param x FooRanges object
 #' @param value replacement for barbar
 #' @param ... additional arguments
 #'
 #' @rdname barbar
 #' @export
-setMethod("barbar", signature(x="fooRanges"),
-          function(x) {
-            x@barbar
-          })
+setMethod("barbar", signature(x="FooRanges"), function(x) {
+    x@barbar
+})
 
 #' @rdname barbar
 #' @export
-setReplaceMethod("barbar", signature(x="fooRanges", value="character"),
-                 function(x, value) {
-                   x@barbar <- value
-                   x
-                 })
+setReplaceMethod("barbar", signature(x="FooRanges", value="character"), function(x, value) {
+    x@barbar <- value
+    x
+})

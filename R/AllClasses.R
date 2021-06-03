@@ -1,24 +1,24 @@
-#' @rdname fooRanges
+#' @rdname FooRanges
 #' @export
-setClass("fooRanges",
-         contains = "GRanges",
-         representation = representation( 
-           barbar = "character"))
+.FooRanges <- setClass(
+    "FooRanges",
+    contains = "GRanges",
+    slots = c(barbar = "character")
+)
 
-#' fooRanges
+#' FooRanges
 #'
-#' The fooRanges object and constructor
+#' The FooRanges object and constructor
 #'
 #' @param x a GRanges object
 #' @param barbar character string
 #'
-#' @return a fooRanges object
-#' 
-#' @rdname fooRanges
+#' @return a FooRanges object
+#'
+#' @rdname FooRanges
 #' @import GenomicRanges IRanges
 #' @importFrom methods new
 #' @export
-fooRanges <- function(x, barbar) {
-  x <- new("fooRanges", x, barbar=barbar)
-  return(x)
+FooRanges <- function(x, barbar) {
+    .FooRanges(x, barbar=barbar)
 }

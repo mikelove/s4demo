@@ -2,15 +2,15 @@
 % Please edit documentation in R/AllGenerics.R, R/methods-fooRanges.R
 \name{foobar}
 \alias{foobar}
-\alias{foobar,fooRanges-method}
-\title{Foobar fooRanges}
+\alias{foobar,FooRanges-method}
+\title{Foobar FooRanges}
 \usage{
 foobar(x, ...)
 
-\S4method{foobar}{fooRanges}(x)
+\S4method{foobar}{FooRanges}(x)
 }
 \arguments{
-\item{x}{fooRanges object}
+\item{x}{FooRanges object}
 
 \item{...}{additional arguments}
 }
@@ -18,13 +18,13 @@ foobar(x, ...)
 a summary
 }
 \description{
-A function that does foobar to fooRanges
+A function that does foobar to FooRanges
 }
 \examples{
 
 library(GenomicRanges)
 x <- GRanges("1", IRanges(1,10))
-y <- fooRanges(x, barbar="hi")
+y <- FooRanges(x, barbar="hi")
 barbar(y)
 barbar(y) <- "hey"
 foobar(y)

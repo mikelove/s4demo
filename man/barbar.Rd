@@ -3,25 +3,25 @@
 \name{barbar}
 \alias{barbar}
 \alias{barbar<-}
-\alias{barbar,fooRanges-method}
-\alias{barbar<-,fooRanges,character-method}
-\title{Accessor and replacement methods for barbar of fooRanges}
+\alias{barbar,FooRanges-method}
+\alias{barbar<-,FooRanges,character-method}
+\title{Accessor and replacement methods for barbar of FooRanges}
 \usage{
 barbar(x, ...)
 
 barbar(x, ...) <- value
 
-\S4method{barbar}{fooRanges}(x)
+\S4method{barbar}{FooRanges}(x)
 
-\S4method{barbar}{fooRanges,character}(x) <- value
+\S4method{barbar}{FooRanges,character}(x) <- value
 }
 \arguments{
-\item{x}{fooRanges object}
+\item{x}{FooRanges object}
 
 \item{...}{additional arguments}
 
 \item{value}{replacement for barbar}
 }
 \description{
-Functions that get or set the barbar slot from fooRanges
+Functions that get or set the barbar slot from FooRanges
 }
