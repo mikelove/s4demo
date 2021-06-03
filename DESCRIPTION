@@ -1,6 +1,6 @@
 Package: s4demo
 Title: Simple Demo of S4 Methods and Classes for Bioconductor
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: 
     person(given = "First",
            family = "Last",
