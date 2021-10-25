@@ -1,9 +1,14 @@
-foobar.FooRanges <- function(x) {
+#' Helper function used as the method definition
+#'
+#' @noRd
+#'
+#' @keywords internal
+.foobarFooRanges <- function(x) {
     message("sum of starts: ", sum(start(x)))
     message("barbar: ", barbar(x))
 }
 
-#' Foobar FooRanges
+#' foobar generic and methods
 #'
 #' A function that does foobar to FooRanges
 #'
@@ -20,12 +25,12 @@ foobar.FooRanges <- function(x) {
 #' barbar(y)
 #' barbar(y) <- "hey"
 #' foobar(y)
-#' 
+#'
 #' @rdname foobar
 #' @export
-setMethod("foobar", signature(x="FooRanges"), foobar.FooRanges)
+setMethod("foobar", signature(x="FooRanges"), .foobarFooRanges)
 
-#' Accessor and replacement methods for barbar of FooRanges
+#' Accessor and replacement methods for barbar in FooRanges
 #'
 #' Functions that get or set the barbar slot from FooRanges
 #'
@@ -41,7 +46,8 @@ setMethod("barbar", signature(x="FooRanges"), function(x) {
 
 #' @rdname barbar
 #' @export
-setReplaceMethod("barbar", signature(x="FooRanges", value="character"), function(x, value) {
-    x@barbar <- value
-    x
-})
+setReplaceMethod("barbar", signature(x="FooRanges", value="character"),
+    function(x, value) {
+        BiocGenerics:::replaceSlots(x, barbar = value, check = FALSE)
+    }
+)
