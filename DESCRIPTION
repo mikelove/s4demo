@@ -1,6 +1,6 @@
 Package: s4demo
 Title: Simple Demo of S4 Methods and Classes for Bioconductor
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: 
     person(given = "First",
            family = "Last",
@@ -8,11 +8,13 @@ Authors@R:
            email = "first.last@example.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: What the package does (one paragraph).
-Imports: GenomicRanges,
+Imports:
+    BiocGenerics,
+    GenomicRanges,
     IRanges,
     methods
 License: GPL (>=2)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
