@@ -25,8 +25,6 @@ A function that does foobar to FooRanges
 library(GenomicRanges)
 x <- GRanges("1", IRanges(1,10))
 y <- FooRanges(x, barbar="hi")
-barbar(y)
-barbar(y) <- "hey"
 foobar(y)
 
 }

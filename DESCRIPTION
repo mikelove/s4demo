@@ -1,20 +1,24 @@
 Package: s4demo
 Title: Simple Demo of S4 Methods and Classes for Bioconductor
 Version: 0.0.4
-Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Authors@R: c(
+    person("Mike", "Love", , "michaelisaiahlove@gmail.com", c("aut", "cre")),
+    person("Martin", "Morgan", role = "ctb"),
+    person("Marcel", "Ramos", role = "ctb")
+    )
+Description: The package demonstrates the creation of an S4 class along with
+    its constructor, accessor, and replacement functions / methods. The
+    FooRanges class inherits from GRanges and adds a "barbar" slot. The accessor
+    and replacement functions for the "barbar" slot are defined in the package.
+    The 'foobar' method gives a summary of the object and the 'show' method
+    is inherited from 'GRanges'.
 Imports:
-    BiocGenerics,
+    BiocBaseUtils,
     GenomicRanges,
     IRanges,
     methods
+biocViews: Infrastructure, Software
 License: GPL (>=2)
 Encoding: UTF-8
-LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3

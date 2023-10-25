@@ -17,6 +17,13 @@ a FooRanges class object
 \description{
 The FooRanges constructor function
 }
+\examples{
+
+library(GenomicRanges)
+x <- GRanges("1", IRanges(1,10))
+FooRanges(x, barbar="hi")
+
+}
 \seealso{
 \code{\link{FooRanges-class}}
 }

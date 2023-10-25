@@ -5,6 +5,18 @@
 \alias{FooRanges-class}
 \alias{.FooRanges}
 \title{FooRanges-class}
+\value{
+a \code{FooRanges} class object
+}
 \description{
 The FooRanges class documentation
+}
+\examples{
+
+library(GenomicRanges)
+x <- GRanges("1", IRanges(1,10))
+y <- FooRanges(x, barbar="hi")
+class(y)
+showClass(class(y))
+
 }

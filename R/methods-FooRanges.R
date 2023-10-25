@@ -22,8 +22,6 @@
 #' library(GenomicRanges)
 #' x <- GRanges("1", IRanges(1,10))
 #' y <- FooRanges(x, barbar="hi")
-#' barbar(y)
-#' barbar(y) <- "hey"
 #' foobar(y)
 #'
 #' @rdname foobar
@@ -38,6 +36,17 @@ setMethod("foobar", signature(x="FooRanges"), .foobarFooRanges)
 #' @param value replacement for barbar
 #' @param ... additional arguments
 #'
+#' @examples
+#'
+#' library(GenomicRanges)
+#' x <- GRanges("1", IRanges(1,10))
+#' y <- FooRanges(x, barbar="hi")
+#' barbar(y)
+#' barbar(y) <- "hey"
+#' barbar(y)
+#'
+#' @return The character value in the `barbar` slot
+#'
 #' @rdname barbar
 #' @export
 setMethod("barbar", signature(x="FooRanges"), function(x) {
@@ -45,9 +54,10 @@ setMethod("barbar", signature(x="FooRanges"), function(x) {
 })
 
 #' @rdname barbar
+#' @importFrom BiocBaseUtils setSlots
 #' @export
 setReplaceMethod("barbar", signature(x="FooRanges", value="character"),
     function(x, value) {
-        BiocGenerics:::replaceSlots(x, barbar = value, check = FALSE)
+        BiocBaseUtils::setSlots(x, barbar = value, check = FALSE)
     }
 )
