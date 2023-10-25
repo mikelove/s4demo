@@ -2,8 +2,18 @@
 #'
 #' The FooRanges class documentation
 #'
+#' @examples
+#'
+#' library(GenomicRanges)
+#' x <- GRanges("1", IRanges(1,10))
+#' y <- FooRanges(x, barbar="hi")
+#' class(y)
+#' showClass(class(y))
+#'
+#' @return a `FooRanges` class object
+#'
 #' @importFrom methods new setClass
-#' @export
+#' @exportClass FooRanges
 .FooRanges <- setClass(
     "FooRanges",
     contains = "GRanges",
@@ -23,6 +33,12 @@
 #' @importFrom methods is
 #'
 #' @seealso \code{\link{FooRanges-class}}
+#'
+#' @examples
+#'
+#' library(GenomicRanges)
+#' x <- GRanges("1", IRanges(1,10))
+#' FooRanges(x, barbar="hi")
 #'
 #' @export
 FooRanges <- function(x, barbar) {

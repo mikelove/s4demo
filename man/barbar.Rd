@@ -22,6 +22,19 @@ barbar(x, ...) <- value
 
 \item{value}{replacement for barbar}
 }
+\value{
+The character value in the \code{barbar} slot
+}
 \description{
 Functions that get or set the barbar slot from FooRanges
+}
+\examples{
+
+library(GenomicRanges)
+x <- GRanges("1", IRanges(1,10))
+y <- FooRanges(x, barbar="hi")
+barbar(y)
+barbar(y) <- "hey"
+barbar(y)
+
 }
